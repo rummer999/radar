@@ -39,18 +39,7 @@ int main(int argc, char *argv[]) {
 
     while (1) {
         Map->Read();
-        if (!Map->IsPlayable) {
-            //printf("Игрок в лобби - ЖДЕМ 35 sec\n");
-            std::this_thread::sleep_for(std::chrono::milliseconds(35000));
-            continue;
-        }
-
         Myself->Read();
-        if (!Myself->IsValid()) {
-            //printf("Выбор Легенды - ЖДЕМ 5 SEC\n");
-            std::this_thread::sleep_for(std::chrono::seconds(5));
-            continue;
-        }
 
         Players->clear();
         if (Map->IsFiringRange)
