@@ -1,2 +1,3 @@
 make
+
 sudo ./a.out
